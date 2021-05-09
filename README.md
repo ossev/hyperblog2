@@ -8,10 +8,10 @@ _Inicializar un repositorio en local
 ```
 git init
 ```
-_Revisar el status de los archivos que están pendientes por enviar a staged o por hacerles commit
+_Revisar el status de los archivos que están pendientes por enviar a staged o por hacerles commit_
 
 ```
 git status
 ```
 
-_Guardar los cambios en firme enviando los cambios al repositorio
+_Guardar los cambios en firme enviando los cambios al repositorio_
