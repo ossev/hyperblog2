@@ -218,8 +218,87 @@ _Añadir tu llave SSH a este servidor_
 ssh-add ruta-donde-guardaste-tu-llave-privada
 ```
 
-_actualizar la URL que guardamos en nuestro repositorio remoto, solo que, en vez de guardar la URL con HTTPS, vamos a usar la URL con SSH_
+_Actualizar la URL que guardamos en nuestro repositorio remoto, solo que, en vez de guardar la URL con HTTPS, vamos a usar la URL con SSH_
 
 ```
 git remote set-url origin url-ssh-del-repositorio-en-github
 ```
+
+_Mostrar el historial del repositorio en la terminal con una especie de grafo_
+
+```
+git log --all --graph --decorate --oneline
+```
+
+_Crear un nuevo tag y asignarlo a un commit_
+
+```
+git tag -a nombre-del-tag id-del-commit
+```
+
+_Borrar un tag en el repositorio local_
+
+```
+git tag -d nombre-del-tag
+```
+
+_Listar los tags de nuestro repositorio local_
+
+```
+git tag
+```
+o
+```
+git show-ref --tags
+```
+
+_Publicar un tag en el repositorio remoto_
+
+```
+git push origin --tags
+```
+
+_Borrar un tag del repositorio remoto_
+
+```
+git tag -d nombre-del-tag
+```
+o
+```
+git push origin :refs/tags/nombre-del-tag
+```
+
+_Cambiar el nombre de un tag_
+
+```
+git tag -a nombre_actual -m "nombre_nuevo"
+```
+
+_Mostrar las ramas que existen y cual es su historia_
+
+```
+git show-branch --all
+```
+
+_Abrir git en una interfaz gráfica_
+
+```
+gitk
+```
+
+_Clonar un proyecto de github_
+
+```
+git clone "url"
+```
+
+Para agregar a personas a un repooisitorio se debe ir a la opción de colaboradores en configuraciónen github
+
+En un entorno profesional normalmente se bloquea la rama master, y para enviar código a dicha rama pasa por un code review y luego de su aprobación se unen códigos con los llamados merge request.
+
+Para realizar pruebas enviamos el código a servidores que normalmente los llamamos staging develop (servidores de pruebas) luego de que se realizan las pruebas pertinentes tanto de código como de la aplicación estos pasan a el servidor de producción con el ya antes mencionado merge request.
+
+Pull request:
+Es una funcionalidad de github (en gitlab llamada merge request y en bitbucket push request), en la que un colaborador pide que revisen sus cambios antes de hacer merge a una rama, normalmente master.
+
+Al hacer un pull request se genera una conversación que pueden seguir los demás usuarios del repositorio, así como autorizar y rechazar los cambios.
